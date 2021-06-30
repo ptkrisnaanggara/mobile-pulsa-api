@@ -8,8 +8,8 @@ const axios = require('axios')
     await axios
     .post('https://testprepaid.mobilepulsa.net/v1/legacy/index/'+type+'/'+operator, {
             commands: 'pricelist',
-            username: "085737319000",
-            sign: crypto.createHash('md5').update('0857373190009925e5b7c9e75827pl').digest("hex")
+            username: "085122000123",
+            sign: crypto.createHash('md5').update('0851220001239925e5b7c9e75827pl').digest("hex")
     })
     .then(result => {
         var listProducts = result.data.data

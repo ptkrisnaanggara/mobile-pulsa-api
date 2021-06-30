@@ -65,12 +65,12 @@ module.exports = {
         var endpoint = 'https://testpostpaid.mobilepulsa.net/api/v1/bill/check/' + req.body.type
         var commands = 'pricelist-pasca'
     }
-    let hash = crypto.createHash('md5').update('0857373190009925e5b7c9e75827pl').digest("hex")
+    let hash = crypto.createHash('md5').update('0851220001239925e5b7c9e75827pl').digest("hex")
 
     await axios
     .post(endpoint, {
             commands: commands,
-            username: "085737319000",
+            username: "085122000123",
             sign: hash
     })
     .then(result => {
@@ -121,7 +121,7 @@ module.exports = {
     }
 
     var ref = await uuid();
-    let hash = crypto.createHash('md5').update('0857373190009925e5b7c9e75827'+ref).digest("hex")
+    let hash = crypto.createHash('md5').update('0851220001239925e5b7c9e75827'+ref).digest("hex")
 
     var marginType;
     await Type.findOne({
@@ -157,8 +157,8 @@ module.exports = {
     await axios
     .post('https://testprepaid.mobilepulsa.net/v1/legacy/index/'+req.body.type+'/'+req.body.operator, {
             commands: 'pricelist',
-            username: "085737319000",
-            sign: crypto.createHash('md5').update('0857373190009925e5b7c9e75827pl').digest("hex")
+            username: "085122000123",
+            sign: crypto.createHash('md5').update('0851220001239925e5b7c9e75827pl').digest("hex")
     })
     .then(async result => {
         var listProducts = result.data.data
@@ -194,7 +194,7 @@ module.exports = {
     await axios
         .post(endpoint, {
                 commands: commands,
-                username: "085737319000",
+                username: "085122000123",
                 ref_id: ref,
                 hp: req.body.hp,
                 pulsa_code: req.body.pulsa_code,

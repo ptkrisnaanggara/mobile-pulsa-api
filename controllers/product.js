@@ -39,12 +39,12 @@ module.exports = {
         var endpoint = 'https://testpostpaid.mobilepulsa.net/api/v1/bill/check/' + req.body.type
         var commands = 'pricelist-pasca'
     }
-    let hash = crypto.createHash('md5').update('0857373190009925e5b7c9e75827pl').digest("hex")
+    let hash = crypto.createHash('md5').update('0851220001239925e5b7c9e75827pl').digest("hex")
 
     await axios
     .post(endpoint, {
             commands: commands,
-            username: "085737319000",
+            username: "085122000123",
             sign: hash
     })
     .then(result => {
@@ -73,18 +73,18 @@ module.exports = {
 
     if(req.params.req == 'pln') {
         var commands = 'inquiry_pln'
-        var hash = crypto.createHash('md5').update('0857373190009925e5b7c9e75827'+req.body.hp).digest("hex")
+        var hash = crypto.createHash('md5').update('0851220001239925e5b7c9e75827'+req.body.hp).digest("hex")
 
     } else {
         var commands = 'check-game-id'
-        var hash = crypto.createHash('md5').update('0857373190009925e5b7c9e75827'+req.body.game_code).digest("hex")
+        var hash = crypto.createHash('md5').update('0851220001239925e5b7c9e75827'+req.body.game_code).digest("hex")
     }
 
 
     await axios
     .post(endpoint, {
             commands: commands,
-            username: "085737319000",
+            username: "085122000123",
             hp: req.body.hp,
             game_code: req.body.game_code || '',
             sign: hash
